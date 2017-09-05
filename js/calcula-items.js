@@ -48,9 +48,9 @@ function somaLista(items){
     var total = 0;
     for(var i = 0; i < items.length; i++){
         var item = items[i];
-        var tdPrecoUnitario = item.querySelector(".info-preco-unitario");
-        var precoUnitario = tdPrecoUnitario.textContent;
-        total = parseFloat(total) + parseFloat(precoUnitario);
+        var tdTotalItem = item.querySelector(".info-total-item");
+        var totalItem = tdTotalItem.textContent;
+        total = parseFloat(total) + parseFloat(totalItem);
     }
 
     var totalListaTd = document.querySelector("#totalLista");

@@ -15,6 +15,7 @@ botaoAdicionar.addEventListener("click", function(event){
     var precoUnitarioTd = document.createElement("td");  
     precoUnitarioTd.classList.add("info-preco-unitario")  
     var totalItemTd = document.createElement("td");
+    totalItemTd.classList.add("info-total-item");
 
     nomeTd.textContent = item;
     quantidadeTd.textContent = quantidade;
