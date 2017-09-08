@@ -80,18 +80,18 @@
 					<h2 id="titulo-form">Adicionar novo item <span class="close">&times;</span></h2>					
 					<form id="form-adiciona">
 						<div class="">
-							<label class="adicionado">Item adicionado com sucesso!</label>
+							<label class="mensagem">Item adicionado com sucesso!</label>
 							<br/>
 							<label for="nome">Nome:</label>
 							<input id="nome" name="nome" type="text" placeholder="Digite o nome do novo item" class="campo">
 						</div>
 						<div class="grupo">
 							<label for="quantidade">Quantidade:</label>
-							<input id="quantidade" name="quantidade" type="number" placeholder="Digite a quantidade do novo item" class="campo campo-medio">
+							<input id="quantidade" name="quantidade" type="number" min="1" placeholder="Digite a quantidade do novo item" class="campo campo-medio">
 						</div>
 						<div class="grupo">
 							<label for="precoUnitario">Preço unitário:</label>
-							<input id="precoUnitario" name="precoUnitario" type="number" placeholder="Digite o preço unitário do novo item" class="campo campo-medio">
+							<input id="precoUnitario" name="precoUnitario" type="number" min="1" placeholder="Digite o preço unitário do novo item" class="campo campo-medio">
 						</div>				
 
 						<button id="adicionar-item" class="botao bto-principal">Adicionar</button>

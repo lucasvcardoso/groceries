@@ -7,6 +7,12 @@ botaoAdicionar.addEventListener("click", function(event){
     var item = form.nome.value;
     var quantidade = form.quantidade.value;
     var precoUnitario = form.precoUnitario.value;
+
+    if(quantidade <= 0 || precoUnitario <= 0 || isNaN(quantidade) || isNaN(precoUnitario)){
+        var mensagem = item + ": Quantidade e preço devem ser números válidos.";
+        showMensagem(mensagem);
+        return;
+    }
     
     var itemTr = document.createElement("tr");
     itemTr.classList.add("item");
@@ -31,16 +37,16 @@ botaoAdicionar.addEventListener("click", function(event){
 
     tabela.appendChild(itemTr);
 
-    showAdicionado(item);
+    showMensagem(item + " adicionado com sucesso!");
 
     somaLista();
     
     limpaCampos(form);
 });
 
-function showAdicionado(item){
-    var label = document.querySelector(".adicionado");
-    label.textContent = item + " adicionado com sucesso!";
+function showMensagem(mensagem){
+    var label = document.querySelector(".mensagem");
+    label.textContent = mensagem;
     label.style.display = "block";
     setTimeout(function(){
         label.style.display = "none";
