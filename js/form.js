@@ -9,7 +9,13 @@ botaoAdicionar.addEventListener("click", function(event){
     var precoUnitario = form.precoUnitario.value;
 
     if(quantidade <= 0 || precoUnitario <= 0 || isNaN(quantidade) || isNaN(precoUnitario)){
-        var mensagem = item + ": Quantidade e preço devem ser números válidos.";
+        var mensagem = "Erro: quantidade e preço devem ser números válidos.";
+        showMensagem(mensagem);
+        return;
+    }
+
+    if(item == "" || quantidade == "" || precoUnitario == ""){
+        var mensagem = "Erro: os campos devem ser preenchidos.";
         showMensagem(mensagem);
         return;
     }
