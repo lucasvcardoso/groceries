@@ -54,7 +54,7 @@ function somaLista(items){
     }
 
     var totalListaTd = document.querySelector("#totalLista");
-    totalListaTd.textContent = "Total da lista: " + total;
+    totalListaTd.textContent = "Total da lista: R$" + total;
     //console.log(total);
 }
 
