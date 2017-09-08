@@ -9,12 +9,17 @@ itemModalBtn.onclick = function(){
 }
 
 closeBtn.onclick = function(){
-     modal.style.display = "none";
+    modal.style.display = "none";
+    var form = document.querySelector("#form-adiciona");
+    limpaCampos(form);
 }
 
 window.onclick = function(event){
+    var form = document.querySelector("#form-adiciona");
+    
     if(event.target == modal){
         modal.style.display = "none";
+        limpaCampos(form);
     }
 }
 
