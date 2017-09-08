@@ -3,13 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Groceries Prototype Site</title>
-		<link rel="icon" href="http://groceriesprototype.azurewebsites.net/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-		
+		<link rel="stylesheet" type="text/css" href="css/modal.css">
 	</head>
 	<body>
-
 		<header>
 			<div class="container">
 				<h1 class="titulo">Groceries Prototype Site</h1>
@@ -24,9 +23,7 @@
 						</td>
 						<td  class="total">
 							<h2 id="totalLista" name="totalLista">Total da lista:</h2>
-						</td>
-						<td  class="total">
-						</td>
+						</td>						
 					</tr>
 				</table>
 				<table>
@@ -78,25 +75,33 @@
 			</section>
 		</main>
 		<section class="container">
-			<h2 id="titulo-form">Adicionar novo item</h2>
-			<form id="form-adiciona">
-				<div class="">
-					<label for="nome">Nome:</label>
-					<input id="nome" name="nome" type="text" placeholder="Digite o nome do novo item" class="campo">
-				</div>
-				<div class="grupo">
-					<label for="quantidade">Quantidade:</label>
-					<input id="quantidade" name="quantidade" type="text" placeholder="Digite a quantidade do novo item" class="campo campo-medio">
-				</div>
-				<div class="grupo">
-					<label for="precoUnitario">Preço unitário:</label>
-					<input id="precoUnitario" name="precoUnitario" type="text" placeholder="Digite o preço unitário do novo item" class="campo campo-medio">
-				</div>				
+			<div id="itemModal" class="modal">
+				<div class="modal-content">
+					<h2 id="titulo-form">Adicionar novo item <span class="close">&times;</span></h2>					
+					<form id="form-adiciona">
+						<div class="">
+							<label class="adicionado">Item adicionado com sucesso!</label>
+							<br/>
+							<label for="nome">Nome:</label>
+							<input id="nome" name="nome" type="text" placeholder="Digite o nome do novo item" class="campo">
+						</div>
+						<div class="grupo">
+							<label for="quantidade">Quantidade:</label>
+							<input id="quantidade" name="quantidade" type="text" placeholder="Digite a quantidade do novo item" class="campo campo-medio">
+						</div>
+						<div class="grupo">
+							<label for="precoUnitario">Preço unitário:</label>
+							<input id="precoUnitario" name="precoUnitario" type="text" placeholder="Digite o preço unitário do novo item" class="campo campo-medio">
+						</div>				
 
-				<button id="adicionar-item" class="botao bto-principal">Adicionar</button>
-			</form>
+						<button id="adicionar-item" class="botao bto-principal">Adicionar</button>
+					</form>
+				</div>
+			</div>
+			<button id="adicionar-item-modal" class="botao bto-principal">Adicionar item</button>
 		</section>
 		<script src="js/calcula-items.js"></script>
 		<script src="js/form.js"></script>
+		<script src="js/modal.js"></script>
 	</body>
 </html>

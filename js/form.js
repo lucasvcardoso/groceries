@@ -3,7 +3,7 @@ var botaoAdicionar = document.querySelector("#adicionar-item");
 botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault();
     var form = document.querySelector("#form-adiciona");
-    
+
     var item = form.nome.value;
     var quantidade = form.quantidade.value;
     var precoUnitario = form.precoUnitario.value;
@@ -30,5 +30,25 @@ botaoAdicionar.addEventListener("click", function(event){
     var tabela = document.querySelector("#tabela-compras");
 
     tabela.appendChild(itemTr);
+
+    showAdicionado(item);
+
     somaLista();
+    
+    limpaCampos(form);
 });
+
+function showAdicionado(item){
+    var label = document.querySelector(".adicionado");
+    label.textContent = item + " adicionado com sucesso!";
+    label.style.display = "block";
+    setTimeout(function(){
+        label.style.display = "none";
+    }, 3000);
+}
+
+function limpaCampos(form){
+    form.nome.value = "";
+    form.quantidade.value = "";
+    form.precoUnitario.value = "";
+}
