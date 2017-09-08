@@ -31,7 +31,7 @@ botaoAdicionar.addEventListener("click", function(event){
 
     nomeTd.textContent = item;
     quantidadeTd.textContent = quantidade;
-    precoUnitarioTd.textContent = precoUnitario;
+    precoUnitarioTd.textContent = parseFloat(precoUnitario).toFixed(2);    
     totalItemTd.textContent = calculaTotalItem(quantidade, precoUnitario);
 
     itemTr.appendChild(nomeTd);
