@@ -28,17 +28,34 @@ botaoAdicionar.addEventListener("click", function(event){
     precoUnitarioTd.classList.add("info-preco-unitario")  
     var totalItemTd = document.createElement("td");
     totalItemTd.classList.add("info-total-item");
+    var noCarrinhoTd = document.createElement("td");
+    var checkbox = document.createElement("INPUT");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("info-no-carrinho");
+    checkbox.addEventListener("click", function(){
+        if(checkbox.checked){
+            itemTr.classList.add("no-carrinho");
+            atualizaCarrinho();
+        }
+        else{
+            itemTr.classList.remove("no-carrinho");
+            atualizaCarrinho();
+        }
+    });
+
+    noCarrinhoTd.appendChild(checkbox);
 
     nomeTd.textContent = item;
     quantidadeTd.textContent = quantidade;
     precoUnitarioTd.textContent = parseFloat(precoUnitario).toFixed(2);    
     totalItemTd.textContent = calculaTotalItem(quantidade, precoUnitario);
 
+    itemTr.appendChild(noCarrinhoTd);
     itemTr.appendChild(nomeTd);
     itemTr.appendChild(quantidadeTd);
     itemTr.appendChild(precoUnitarioTd);
     itemTr.appendChild(totalItemTd);
-
+    
     var tabela = document.querySelector("#tabela-compras");
 
     tabela.appendChild(itemTr);
@@ -46,7 +63,7 @@ botaoAdicionar.addEventListener("click", function(event){
     showMensagem(item + " adicionado com sucesso!");
 
     somaLista();
-    
+        
     limpaCampos(form);
 });
 
