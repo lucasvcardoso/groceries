@@ -64,7 +64,7 @@ botaoAdicionar.addEventListener("click", function(event){
 
     somaLista();
         
-    limpaCampos(form);
+    form.reset();
 });
 
 function showMensagem(mensagem){
@@ -74,10 +74,4 @@ function showMensagem(mensagem){
     setTimeout(function(){
         label.style.display = "none";
     }, 3000);
-}
-
-function limpaCampos(form){
-    form.nome.value = "";
-    form.quantidade.value = "";
-    form.precoUnitario.value = "";
 }
