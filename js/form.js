@@ -23,7 +23,9 @@ botaoAdicionar.addEventListener("click", function(event){
     var itemTr = document.createElement("tr");
     itemTr.classList.add("item");
     var nomeTd = document.createElement("td");
+    nomeTd.classList.add("info-nome");
     var quantidadeTd = document.createElement("td");
+    quantidadeTd.classList.add("info-quantidade");
     var precoUnitarioTd = document.createElement("td");  
     precoUnitarioTd.classList.add("info-preco-unitario")  
     var totalItemTd = document.createElement("td");
@@ -73,7 +75,6 @@ function showMensagem(mensagem){
     label.classList.remove("invisivel");
     label.classList.add("visivel");
     label.classList.add("fadeOut");
-    console.log(label);
     
     setTimeout(function(){
         label.classList.remove("fadeOut");
