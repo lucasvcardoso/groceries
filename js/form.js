@@ -68,10 +68,16 @@ botaoAdicionar.addEventListener("click", function(event){
 });
 
 function showMensagem(mensagem){
-    var label = document.querySelector(".mensagem");
+    var label = document.querySelector("#mensagem");
     label.textContent = mensagem;
-    label.style.display = "block";
+    label.classList.remove("invisivel");
+    label.classList.add("visivel");
+    label.classList.add("fadeOut");
+    console.log(label);
+    
     setTimeout(function(){
-        label.style.display = "none";
-    }, 3000);
+        label.classList.remove("fadeOut");
+        label.classList.remove("visivel");
+        label.classList.add("invisivel");
+    }, 5000);
 }
